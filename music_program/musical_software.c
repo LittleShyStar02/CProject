@@ -342,18 +342,18 @@ int getSemitone(char *note)
 int getSemitoneInScale(char *note)
 {
 	note = removeScale(note);
-	if(!strcmp(note,"DO")) return 1;
-	if(!strcmp(note,"DO#") || !strcmp(note,"REb")) return 2;
-	if(!strcmp(note,"RE")) return 3;
-	if(!strcmp(note,"RE#") || !strcmp(note,"MIb")) return 4;
-	if(!strcmp(note,"MI")) return 5;
-	if(!strcmp(note,"FA")) return 6;
-	if(!strcmp(note,"FA#") || !strcmp(note,"SOLb")) return 7;
-	if(!strcmp(note,"SOL")) return 8;
-	if(!strcmp(note,"SOL#") || !strcmp(note,"LAb")) return 9;
-	if(!strcmp(note,"LA")) return 10;
-	if(!strcmp(note,"LA#") || !strcmp(note,"SIb")) return 11;
-	if(!strcmp(note,"SI")) return 12;
+	if(!strcmp(toLowerCase(note),"do")) return 1;
+	if(!strcmp(toLowerCase(note),"do#") || !strcmp(toLowerCase(note),"reb")) return 2;
+	if(!strcmp(toLowerCase(note),"re")) return 3;
+	if(!strcmp(toLowerCase(note),"re#") || !strcmp(toLowerCase(note),"mib")) return 4;
+	if(!strcmp(toLowerCase(note),"MI")) return 5;
+	if(!strcmp(toLowerCase(note),"fa")) return 6;
+	if(!strcmp(toLowerCase(note),"fa#") || !strcmp(toLowerCase(note),"solb")) return 7;
+	if(!strcmp(toLowerCase(note),"sol")) return 8;
+	if(!strcmp(toLowerCase(note),"sol#") || !strcmp(toLowerCase(note),"lab")) return 9;
+	if(!strcmp(toLowerCase(note),"la")) return 10;
+	if(!strcmp(toLowerCase(note),"la#") || !strcmp(toLowerCase(note),"sib")) return 11;
+	if(!strcmp(toLowerCase(note),"si")) return 12;
 	return -1;
 }
 
