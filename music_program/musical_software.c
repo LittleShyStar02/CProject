@@ -426,14 +426,14 @@ void playFile()
 	while(!feof(file))
 	{
 		fscanf(file,"%s %d",note,&ms);
-		if(!strcmp(note,"pause"))
+		if(strcmp(note,"pause"))
 		{
-			Sleep(ms);
-			continue;
+			frequence = getFrequence(note);
+			Beep(frequence,ms);
 		}
-		frequence = getFrequence(note);
-		Beep(frequence,ms);
-		if(ms-25 > 0) Sleep(ms-25);
+		if(ms < 125) ms = 125;
+		ms -= 25;
+		Sleep(ms);
 	}
 	free(path);
 	fclose(file);
